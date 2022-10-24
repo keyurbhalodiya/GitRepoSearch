@@ -13,8 +13,10 @@
 		DF596ED92906704D00089861 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF596ED22906704D00089861 /* LaunchScreen.storyboard */; };
 		DF596EDA2906704D00089861 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF596ED32906704D00089861 /* Main.storyboard */; };
 		DF596EDC290677A700089861 /* RepoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF596EDB290677A700089861 /* RepoListViewController.swift */; };
-		DF596EDE290677B500089861 /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF596EDD290677B500089861 /* RepoListViewModel.swift */; };
 		DF596EE02906787B00089861 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF596EDF2906787B00089861 /* DataProvider.swift */; };
+		DFC6D9D82906C275005C7010 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D9D72906C275005C7010 /* ListViewModel.swift */; };
+		DFC6D9DA2906C305005C7010 /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D9D92906C305005C7010 /* RepoListViewModel.swift */; };
+		DFC6D9DC2906C376005C7010 /* RepoSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D9DB2906C376005C7010 /* RepoSearchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +28,10 @@
 		DF596ED22906704D00089861 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF596ED32906704D00089861 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DF596EDB290677A700089861 /* RepoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewController.swift; sourceTree = "<group>"; };
-		DF596EDD290677B500089861 /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
 		DF596EDF2906787B00089861 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		DFC6D9D72906C275005C7010 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		DFC6D9D92906C305005C7010 /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
+		DFC6D9DB2906C376005C7010 /* RepoSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoSearchResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 		DF596ED42906704D00089861 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DFC6D9D62906C237005C7010 /* Protocol */,
+				DFC6D9D92906C305005C7010 /* RepoListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -125,7 +131,7 @@
 		DF596ED62906704D00089861 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DF596EDD290677B500089861 /* RepoListViewModel.swift */,
+				DFC6D9DB2906C376005C7010 /* RepoSearchResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -135,6 +141,14 @@
 			children = (
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		DFC6D9D62906C237005C7010 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				DFC6D9D72906C275005C7010 /* ListViewModel.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,10 +222,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF596EDE290677B500089861 /* RepoListViewModel.swift in Sources */,
 				DF596EBA29066BB500089861 /* AppDelegate.swift in Sources */,
+				DFC6D9D82906C275005C7010 /* ListViewModel.swift in Sources */,
+				DFC6D9DA2906C305005C7010 /* RepoListViewModel.swift in Sources */,
 				DF596EE02906787B00089861 /* DataProvider.swift in Sources */,
 				DF596EDC290677A700089861 /* RepoListViewController.swift in Sources */,
+				DFC6D9DC2906C376005C7010 /* RepoSearchResult.swift in Sources */,
 				DF596EBC29066BB500089861 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
