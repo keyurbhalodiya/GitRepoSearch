@@ -51,3 +51,15 @@ struct Owner: Codable {
         case login
     }
 }
+
+// MARK: - Parceable protocol
+extension RepoSearchResult: Parceable {
+    static func parseObject(data: Data) -> Result<RepoSearchResult, ErrorResult> {
+        let decoder = JSONDecoder()
+        if let result = try? decoder.decode(RepoSearchResult.self, from: data) {
+            return Result.success(result)
+        } else {
+            return Result.failure(ErrorResult.parser(string: "Unable to parse response"))
+        }
+    }
+}

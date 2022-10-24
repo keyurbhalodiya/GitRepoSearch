@@ -39,9 +39,27 @@ final class RepositoriesFeedViewModel: ListViewModel {
         
     /// API call to fetch repositories
     /// - Parameter searchText: search keyword
-    /// - Returns: completion: return true if API return success
+    /// - Parameter completion: will be success or fail
     func searchRepositoriesFeed(searchText: String, completion: @escaping((Bool) -> Void)) {
+        guard !searchText.isEmpty else {
+            sectionModels.removeAll()
+            completion(true)
+            return
+        }
         
+        resetPageIndexIfNeeded(searchText: searchText)
+        dataProvider.fetchGitHubRepo(query: searchText, page: pageIndex) { [weak self] result in
+            var isSuccess: Bool = false
+            switch result {
+            case .success(let repoSearchResult):
+                self?.pageIndex += 1
+                self?.generateSectionModels(items: repoSearchResult.items)
+                self?.shouldFinishLoading = (self?.numberOfRows(for: .repositoriesFeed))! >= repoSearchResult.totalCount ?? 0
+                isSuccess = true
+            case .failure(_): break
+            }
+            completion(isSuccess)
+        }
     }
     
     /// reset `pageIndex` `shouldFinishLoading` when user search repo with new keyword or empty text

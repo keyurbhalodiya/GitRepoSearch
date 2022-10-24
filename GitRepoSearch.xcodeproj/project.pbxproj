@@ -17,6 +17,14 @@
 		DFC6D9D82906C275005C7010 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D9D72906C275005C7010 /* ListViewModel.swift */; };
 		DFC6D9DA2906C305005C7010 /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D9D92906C305005C7010 /* RepoListViewModel.swift */; };
 		DFC6D9DC2906C376005C7010 /* RepoSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D9DB2906C376005C7010 /* RepoSearchResult.swift */; };
+		DFC6D9E32906C6AD005C7010 /* ReachabilityError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D9DE2906C6AD005C7010 /* ReachabilityError.swift */; };
+		DFC6D9E42906C6AD005C7010 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D9DF2906C6AD005C7010 /* Reachability.swift */; };
+		DFC6D9E52906C6AD005C7010 /* Parceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D9E22906C6AD005C7010 /* Parceable.swift */; };
+		DFC6D9F52906C712005C7010 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D9F02906C712005C7010 /* APIConstants.swift */; };
+		DFC6D9F62906C712005C7010 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D9F12906C712005C7010 /* NetworkService.swift */; };
+		DFC6D9F72906C712005C7010 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D9F22906C712005C7010 /* ImageManager.swift */; };
+		DFC6D9F82906C712005C7010 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D9F32906C712005C7010 /* NetworkHandler.swift */; };
+		DFC6D9F92906C712005C7010 /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D9F42906C712005C7010 /* NetworkMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +40,14 @@
 		DFC6D9D72906C275005C7010 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		DFC6D9D92906C305005C7010 /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
 		DFC6D9DB2906C376005C7010 /* RepoSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoSearchResult.swift; sourceTree = "<group>"; };
+		DFC6D9DE2906C6AD005C7010 /* ReachabilityError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityError.swift; sourceTree = "<group>"; };
+		DFC6D9DF2906C6AD005C7010 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		DFC6D9E22906C6AD005C7010 /* Parceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parceable.swift; sourceTree = "<group>"; };
+		DFC6D9F02906C712005C7010 /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		DFC6D9F12906C712005C7010 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		DFC6D9F22906C712005C7010 /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		DFC6D9F32906C712005C7010 /* NetworkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
+		DFC6D9F42906C712005C7010 /* NetworkMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +155,13 @@
 		DF596ED72906704D00089861 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				DFC6D9F02906C712005C7010 /* APIConstants.swift */,
+				DFC6D9F22906C712005C7010 /* ImageManager.swift */,
+				DFC6D9F32906C712005C7010 /* NetworkHandler.swift */,
+				DFC6D9F42906C712005C7010 /* NetworkMethod.swift */,
+				DFC6D9F12906C712005C7010 /* NetworkService.swift */,
+				DFC6D9E12906C6AD005C7010 /* Parser */,
+				DFC6D9DD2906C6AD005C7010 /* Reachability */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -149,6 +172,23 @@
 				DFC6D9D72906C275005C7010 /* ListViewModel.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		DFC6D9DD2906C6AD005C7010 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				DFC6D9DE2906C6AD005C7010 /* ReachabilityError.swift */,
+				DFC6D9DF2906C6AD005C7010 /* Reachability.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		DFC6D9E12906C6AD005C7010 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				DFC6D9E22906C6AD005C7010 /* Parceable.swift */,
+			);
+			path = Parser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,12 +263,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF596EBA29066BB500089861 /* AppDelegate.swift in Sources */,
+				DFC6D9F52906C712005C7010 /* APIConstants.swift in Sources */,
 				DFC6D9D82906C275005C7010 /* ListViewModel.swift in Sources */,
 				DFC6D9DA2906C305005C7010 /* RepoListViewModel.swift in Sources */,
+				DFC6D9F92906C712005C7010 /* NetworkMethod.swift in Sources */,
 				DF596EE02906787B00089861 /* DataProvider.swift in Sources */,
 				DF596EDC290677A700089861 /* RepoListViewController.swift in Sources */,
+				DFC6D9E42906C6AD005C7010 /* Reachability.swift in Sources */,
+				DFC6D9E32906C6AD005C7010 /* ReachabilityError.swift in Sources */,
+				DFC6D9E52906C6AD005C7010 /* Parceable.swift in Sources */,
 				DFC6D9DC2906C376005C7010 /* RepoSearchResult.swift in Sources */,
+				DFC6D9F62906C712005C7010 /* NetworkService.swift in Sources */,
 				DF596EBC29066BB500089861 /* SceneDelegate.swift in Sources */,
+				DFC6D9F72906C712005C7010 /* ImageManager.swift in Sources */,
+				DFC6D9F82906C712005C7010 /* NetworkHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
