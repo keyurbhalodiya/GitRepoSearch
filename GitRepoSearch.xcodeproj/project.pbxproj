@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		DF596EBA29066BB500089861 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF596EB929066BB500089861 /* AppDelegate.swift */; };
 		DF596EBC29066BB500089861 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF596EBB29066BB500089861 /* SceneDelegate.swift */; };
-		DF596EBE29066BB500089861 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF596EBD29066BB500089861 /* ViewController.swift */; };
-		DF596EC129066BB500089861 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF596EBF29066BB500089861 /* Main.storyboard */; };
 		DF596EC329066BB700089861 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF596EC229066BB700089861 /* Assets.xcassets */; };
-		DF596EC629066BB700089861 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF596EC429066BB700089861 /* LaunchScreen.storyboard */; };
+		DF596ED92906704D00089861 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF596ED22906704D00089861 /* LaunchScreen.storyboard */; };
+		DF596EDA2906704D00089861 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF596ED32906704D00089861 /* Main.storyboard */; };
+		DF596EDC290677A700089861 /* RepoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF596EDB290677A700089861 /* RepoListViewController.swift */; };
+		DF596EDE290677B500089861 /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF596EDD290677B500089861 /* RepoListViewModel.swift */; };
+		DF596EE02906787B00089861 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF596EDF2906787B00089861 /* DataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DF596EB629066BB500089861 /* GitRepoSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitRepoSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF596EB929066BB500089861 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF596EBB29066BB500089861 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DF596EBD29066BB500089861 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DF596EC029066BB500089861 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF596EC229066BB700089861 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DF596EC529066BB700089861 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF596EC729066BB700089861 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF596ED22906704D00089861 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DF596ED32906704D00089861 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		DF596EDB290677A700089861 /* RepoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewController.swift; sourceTree = "<group>"; };
+		DF596EDD290677B500089861 /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
+		DF596EDF2906787B00089861 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,81 @@
 		DF596EB829066BB500089861 /* GitRepoSearch */ = {
 			isa = PBXGroup;
 			children = (
+				DF596ECD2906704D00089861 /* Extension */,
+				DF596ED52906704D00089861 /* DataProvider */,
+				DF596ED62906704D00089861 /* Model */,
+				DF596ED72906704D00089861 /* Networking */,
+				DF596ED02906704D00089861 /* View */,
+				DF596ECE2906704D00089861 /* ViewController */,
+				DF596ED42906704D00089861 /* ViewModel */,
 				DF596EB929066BB500089861 /* AppDelegate.swift */,
 				DF596EBB29066BB500089861 /* SceneDelegate.swift */,
-				DF596EBD29066BB500089861 /* ViewController.swift */,
-				DF596EBF29066BB500089861 /* Main.storyboard */,
 				DF596EC229066BB700089861 /* Assets.xcassets */,
-				DF596EC429066BB700089861 /* LaunchScreen.storyboard */,
 				DF596EC729066BB700089861 /* Info.plist */,
 			);
 			path = GitRepoSearch;
+			sourceTree = "<group>";
+		};
+		DF596ECD2906704D00089861 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		DF596ECE2906704D00089861 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DF596EDB290677A700089861 /* RepoListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DF596ED02906704D00089861 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF596ED12906704D00089861 /* Storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF596ED12906704D00089861 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DF596ED22906704D00089861 /* LaunchScreen.storyboard */,
+				DF596ED32906704D00089861 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		DF596ED42906704D00089861 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DF596ED52906704D00089861 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				DF596EDF2906787B00089861 /* DataProvider.swift */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		DF596ED62906704D00089861 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF596EDD290677B500089861 /* RepoListViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF596ED72906704D00089861 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +195,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF596EC629066BB700089861 /* LaunchScreen.storyboard in Resources */,
+				DF596EDA2906704D00089861 /* Main.storyboard in Resources */,
 				DF596EC329066BB700089861 /* Assets.xcassets in Resources */,
-				DF596EC129066BB500089861 /* Main.storyboard in Resources */,
+				DF596ED92906704D00089861 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,32 +208,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF596EBE29066BB500089861 /* ViewController.swift in Sources */,
+				DF596EDE290677B500089861 /* RepoListViewModel.swift in Sources */,
 				DF596EBA29066BB500089861 /* AppDelegate.swift in Sources */,
+				DF596EE02906787B00089861 /* DataProvider.swift in Sources */,
+				DF596EDC290677A700089861 /* RepoListViewController.swift in Sources */,
 				DF596EBC29066BB500089861 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		DF596EBF29066BB500089861 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DF596EC029066BB500089861 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		DF596EC429066BB700089861 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DF596EC529066BB700089861 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DF596EC829066BB700089861 /* Debug */ = {
