@@ -23,12 +23,12 @@ final class RepoListViewModel: ListViewModel {
     }
     
     private let dataProvider: DataProvider
-    /// recent search keyword
+    /// recent search keyword. get used to reset `pageIndex`
     private var recentSeachText: String = ""
-    /// page index used in api request param
+    /// page index used in api request param. set to `1` when user change search keyword or enter empty text
     private(set) var pageIndex: Int = 1
     /// determine to used api needs to call when user scroll the list.
-    /// set `true` once all app receive all records for specifc search keyword
+    /// set `true` once app receive all repos for specifc search keyword
     private(set) var shouldFinishLoading : Bool = false
     
     var sectionModels = [RepositoriesFeedSectionModel]()

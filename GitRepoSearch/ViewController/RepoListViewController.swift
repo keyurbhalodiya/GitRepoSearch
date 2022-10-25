@@ -27,6 +27,7 @@ final class RepoListViewController: UIViewController, UITableViewDataSource, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setupSearchBarListeners()
         updateUIElements()
     }
     
