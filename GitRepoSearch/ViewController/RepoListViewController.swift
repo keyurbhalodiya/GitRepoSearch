@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 final class RepoListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
@@ -18,6 +19,10 @@ final class RepoListViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var searchBar: UISearchBar?
     @IBOutlet weak var messageLabel: UILabel?
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
+    
+    private let viewModel = RepoListViewModel(dataProvider: DataProvider())
+    private var subscriptions = Set<AnyCancellable>()
+    private var isLoading: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +37,42 @@ final class RepoListViewController: UIViewController, UITableViewDataSource, UIT
                            forCellReuseIdentifier: Constant.repoItemCell)
     }
     
-    private func updateUIElements(isSuccess: Bool = true) {
+    private func setupSearchBarListeners() {
+        let publisher = NotificationCenter.default
+            .publisher(for: UISearchTextField.textDidChangeNotification,
+                       object: searchBar?.searchTextField)
+        publisher
+            .map {
+                ($0.object as? UISearchTextField)?.text ?? ""
+            }
+            .debounce(for: .milliseconds(Constant.searchDelay), scheduler: RunLoop.main)
+            .removeDuplicates()
+            .sink { [weak self] (searchText) in
+                self?.searchRepositories(searchText: searchText)
+            }
+            .store(in: &subscriptions)
+    }
     
+    private func searchRepositories(searchText: String) {
+        guard !isLoading else { return }
+        activityIndicator?.startAnimating()
+        isLoading = true
+        viewModel.searchRepositoriesFeed(searchText: searchText) { [weak self] isSuccess in
+            self?.updateUIElements(isSuccess: isSuccess)
+        }
+    }
+    
+    private func updateUIElements(isSuccess: Bool = true) {
+        DispatchQueue.main.async {
+            self.isLoading = false
+            self.activityIndicator?.stopAnimating()
+            self.tableView?.isHidden = self.viewModel.sectionModels.isEmpty
+            self.messageLabel?.isHidden = !self.viewModel.sectionModels.isEmpty
+            self.tableView?.reloadData()
+            if !isSuccess {
+                self.showAlert(title: APIConstants.error, message: APIConstants.errorMessage)
+            }
+        }
     }
 }
 
@@ -41,17 +80,44 @@ final class RepoListViewController: UIViewController, UITableViewDataSource, UIT
 // MARK: - UITableViewDataSource
 extension RepoListViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        guard let rowCount = viewModel.sectionModel(at: section)?.rows.count else {
+            return 0
+        }
+        return rowCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let row = viewModel.row(at: indexPath) else {
+            return UITableViewCell()
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.repoItemCell, for: indexPath)
+        
+        switch row {
+        case .repositoriesFeed(let item):
+            if let cell = cell as? RepoItemCell {
+                cell.style(with: item)
+                cell.linkTapHandler = { tag in
+                    let urlString = tag == 1 ? item.htmlURL : item.owner?.htmlURL
+                    guard let url = URL(string: urlString ?? "") else { return }
+                    UIApplication.shared.open(url)
+                }
+            }
+        }
+        
+        return cell
     }
 }
 
-// MARK: - UITableViewDelegate
+// MARK: - UISearchBarDelegate
 extension RepoListViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+        if (((scrollView.contentOffset.y + scrollView.frame.size.height) > scrollView.contentSize.height ) && !viewModel.shouldFinishLoading) {
+            searchRepositories(searchText: searchBar?.text ?? "")
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
     }
 }

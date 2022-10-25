@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class RepositoriesFeedViewModel: ListViewModel {
+final class RepoListViewModel: ListViewModel {
     
     enum Section {
         case repositoriesFeed
@@ -101,7 +101,7 @@ final class RepositoriesFeedViewModel: ListViewModel {
 }
 
 // MARK: - CollectionViewModel
-extension RepositoriesFeedViewModel {
+extension RepoListViewModel {
     
     func sectionModel(at section: Int) -> RepositoriesFeedSectionModel? {
         guard section >= 0, section < sectionModels.count else {

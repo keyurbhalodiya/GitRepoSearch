@@ -14,6 +14,9 @@
 		DF596EDA2906704D00089861 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF596ED32906704D00089861 /* Main.storyboard */; };
 		DF596EDC290677A700089861 /* RepoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF596EDB290677A700089861 /* RepoListViewController.swift */; };
 		DF596EE02906787B00089861 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF596EDF2906787B00089861 /* DataProvider.swift */; };
+		DF6E25F029076A6600EC2E62 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6E25EF29076A6600EC2E62 /* UIViewController.swift */; };
+		DF6E25F329076AE000EC2E62 /* RepoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6E25F229076AE000EC2E62 /* RepoItemCell.swift */; };
+		DF6E25F529076AE800EC2E62 /* RepoItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF6E25F429076AE800EC2E62 /* RepoItemCell.xib */; };
 		DFC6D9D82906C275005C7010 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D9D72906C275005C7010 /* ListViewModel.swift */; };
 		DFC6D9DA2906C305005C7010 /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D9D92906C305005C7010 /* RepoListViewModel.swift */; };
 		DFC6D9DC2906C376005C7010 /* RepoSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC6D9DB2906C376005C7010 /* RepoSearchResult.swift */; };
@@ -37,6 +40,9 @@
 		DF596ED32906704D00089861 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DF596EDB290677A700089861 /* RepoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewController.swift; sourceTree = "<group>"; };
 		DF596EDF2906787B00089861 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		DF6E25EF29076A6600EC2E62 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		DF6E25F229076AE000EC2E62 /* RepoItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoItemCell.swift; sourceTree = "<group>"; };
+		DF6E25F429076AE800EC2E62 /* RepoItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoItemCell.xib; sourceTree = "<group>"; };
 		DFC6D9D72906C275005C7010 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		DFC6D9D92906C305005C7010 /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
 		DFC6D9DB2906C376005C7010 /* RepoSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoSearchResult.swift; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 		DF596ECD2906704D00089861 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				DF6E25EF29076A6600EC2E62 /* UIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -113,6 +120,7 @@
 		DF596ED02906704D00089861 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DF6E25F129076AD100EC2E62 /* Cell */,
 				DF596ED12906704D00089861 /* Storyboard */,
 			);
 			path = View;
@@ -164,6 +172,15 @@
 				DFC6D9DD2906C6AD005C7010 /* Reachability */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		DF6E25F129076AD100EC2E62 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DF6E25F229076AE000EC2E62 /* RepoItemCell.swift */,
+				DF6E25F429076AE800EC2E62 /* RepoItemCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		DFC6D9D62906C237005C7010 /* Protocol */ = {
@@ -251,6 +268,7 @@
 			files = (
 				DF596EDA2906704D00089861 /* Main.storyboard in Resources */,
 				DF596EC329066BB700089861 /* Assets.xcassets in Resources */,
+				DF6E25F529076AE800EC2E62 /* RepoItemCell.xib in Resources */,
 				DF596ED92906704D00089861 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +285,7 @@
 				DFC6D9D82906C275005C7010 /* ListViewModel.swift in Sources */,
 				DFC6D9DA2906C305005C7010 /* RepoListViewModel.swift in Sources */,
 				DFC6D9F92906C712005C7010 /* NetworkMethod.swift in Sources */,
+				DF6E25F329076AE000EC2E62 /* RepoItemCell.swift in Sources */,
 				DF596EE02906787B00089861 /* DataProvider.swift in Sources */,
 				DF596EDC290677A700089861 /* RepoListViewController.swift in Sources */,
 				DFC6D9E42906C6AD005C7010 /* Reachability.swift in Sources */,
@@ -276,6 +295,7 @@
 				DFC6D9F62906C712005C7010 /* NetworkService.swift in Sources */,
 				DF596EBC29066BB500089861 /* SceneDelegate.swift in Sources */,
 				DFC6D9F72906C712005C7010 /* ImageManager.swift in Sources */,
+				DF6E25F029076A6600EC2E62 /* UIViewController.swift in Sources */,
 				DFC6D9F82906C712005C7010 /* NetworkHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
